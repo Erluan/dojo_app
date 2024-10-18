@@ -9,12 +9,4 @@ abstract class ConfigReader {
     _config = json.decode(configString) as Map<String, dynamic>;
   }
 
-  static String getAdUnitIdIos() {
-    return _config['adUnitIdIos'] as String;
-  }
-
-  static String getAdUnitIdAndroid() {
-    return _config['adUnitIdAndroid'] as String;
-  }
-
 }

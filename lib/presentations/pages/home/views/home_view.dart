@@ -1,16 +1,12 @@
 // ignore_for_file: prefer_const_constructors
-import 'dart:io';
-
-import 'package:flutter_modular_app_template/infrastructure/core/configs/config_reader.dart';
+import 'package:flutter_modular_app_template/infrastructure/core/shared/constants.dart';
 import 'package:flutter_modular_app_template/presentations/mvvm/mvvm.dart';
 import 'package:flutter_modular_app_template/presentations/pages/home/bloc/home_viewmodel.dart';
 import 'package:flutter_modular_app_template/presentations/utils/utils.dart';
 import 'package:flutter_modular_app_template/presentations/widgets/bottom_navigation.dart';
 import 'package:flutter_modular_app_template/presentations/widgets/custom_app_bar.dart';
-import 'package:flutter_modular_app_template/presentations/widgets/sm_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -74,10 +70,17 @@ class _HomeViewState extends State<HomeView> with ViewMixin<HomeViewModel> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SMBanner(
-                        adUnit: Platform.isAndroid ? ConfigReader.getAdUnitIdAndroid() : ConfigReader.getAdUnitIdIos(),
-                        sizes: const [AdSize.fluid],
-                    )
+                    ElevatedButton.icon(
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: defaultPadding * 1.5,
+                          vertical: defaultPadding,
+                        ),
+                      ),
+                      onPressed: () {},
+                      icon: Icon(Icons.add),
+                      label: Text("Add New"),
+                    ),
                   ],
                 ),
               ),
