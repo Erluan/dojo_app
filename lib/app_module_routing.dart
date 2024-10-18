@@ -8,17 +8,24 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModuleRouting {
   void routes(RouteManager r) {
-    r.child('/', child: (context) => const HomeView(), children: [
-      ChildRoute(
-        AppModuleRoutes.signIn.path,
-        child: (context) => const SignInView(),
-        transition: TransitionType.noTransition,
-      ),
-      ChildRoute(
-        AppModuleRoutes.signUp.path,
-        child: (context) => const SignUpView(),
-        transition: TransitionType.noTransition,
-      ),
-    ]);
+    r.child(
+      '/',
+      child: (context) => const HomeView(),
+    );
+    r.child(
+      AppModuleRoutes.signIn.path,
+      child: (context) => SignInView(),
+      transition: TransitionType.noTransition,
+    );
+    r.child(
+      AppModuleRoutes.signUp.path,
+      child: (context) => SignUpView(),
+      transition: TransitionType.noTransition,
+    );
+    r.child(
+      AppModuleRoutes.dashboard.path,
+      child: (context) => DashboardView(),
+      transition: TransitionType.noTransition,
+    );
   }
 }

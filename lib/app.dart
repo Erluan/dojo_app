@@ -61,7 +61,7 @@ class _MyAppState extends ViewState<MyApp, SettingsViewModel> {
   }
 
   void setBlocs() async {
-    final status = await DM.get<TrackingAuthorization>().requestTrackingAuthorization();
+    // final status = await DM.get<TrackingAuthorization>().requestTrackingAuthorization();
     await settingsCubit.loadSettings();
   }
 

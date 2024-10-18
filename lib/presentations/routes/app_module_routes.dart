@@ -9,4 +9,6 @@ class AppModuleRoutes {
   static const BasePath signUp = BasePath('/sign-up');
   static const BasePath account = BasePath('/account');
 
+  // Dashboard
+  static const BasePath dashboard = BasePath('/dashboard');
 }

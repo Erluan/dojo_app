@@ -27,6 +27,7 @@ class _DashboardViewState extends State<DashboardView> {
             Expanded(
               flex: 5,
               child: SingleChildScrollView(
+                key: Key('singleChildScrollView'),
                 padding: EdgeInsets.all(defaultPadding),
                 child: Column(
                   children: [

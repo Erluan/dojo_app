@@ -47,6 +47,7 @@ class StorageDetails extends StatelessWidget {
             numOfFiles: 1328,
           ),
           StorageInfoCard(
+            key: Key('item_50_text'),
             svgSrc: "assets/icons/unknown.svg",
             title: "Unknown",
             amountOfFiles: "1.3GB",

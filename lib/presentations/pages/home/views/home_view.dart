@@ -2,6 +2,7 @@
 import 'package:flutter_modular_app_template/infrastructure/core/shared/constants.dart';
 import 'package:flutter_modular_app_template/presentations/mvvm/mvvm.dart';
 import 'package:flutter_modular_app_template/presentations/pages/home/bloc/home_viewmodel.dart';
+import 'package:flutter_modular_app_template/presentations/routes/app_module_routes.dart';
 import 'package:flutter_modular_app_template/presentations/utils/utils.dart';
 import 'package:flutter_modular_app_template/presentations/widgets/bottom_navigation.dart';
 import 'package:flutter_modular_app_template/presentations/widgets/custom_app_bar.dart';
@@ -71,15 +72,18 @@ class _HomeViewState extends State<HomeView> with ViewMixin<HomeViewModel> {
                 child: Column(
                   children: [
                     ElevatedButton.icon(
+                      key: Key('go_to_dash_button'),
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           horizontal: defaultPadding * 1.5,
                           vertical: defaultPadding,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () async {
+                        Nav.pushNamed(AppModuleRoutes.dashboard.path);
+                      },
                       icon: Icon(Icons.add),
-                      label: Text("Add New"),
+                      label: Text("Go to Dashboard"),
                     ),
                   ],
                 ),

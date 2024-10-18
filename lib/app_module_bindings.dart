@@ -1,4 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_modular_app_template/presentations/blocs/settings/settings_cubit.dart';
+import 'package:flutter_modular_app_template/presentations/pages/dashboard/bloc/dashboard_cubit.dart';
+import 'package:flutter_modular_app_template/presentations/pages/home/bloc/home_viewmodel.dart';
 
 class AppModuleBindings {
 
@@ -43,9 +46,10 @@ class AppModuleBindings {
     //   getCurrentUserUsecase: i.get<IGetCurrentUserUsecase>(),
     //   logoutUsecase: i.get<ILogoutUseCase>(),
     // ));
-    // i.addSingleton<SettingsViewModel>(() => SettingsViewModel());
-    // i.addLazySingleton<HomeViewModel>(() => HomeViewModel());
-    // i.addLazySingleton<PriceGridViewModel>(() => PriceGridViewModel());
+
+    i.addSingleton<SettingsViewModel>(() => SettingsViewModel());
+    i.addLazySingleton<HomeViewModel>(() => HomeViewModel());
+    i.addSingleton<DashboardCubit>(() => DashboardCubit());
   }
 
 }
